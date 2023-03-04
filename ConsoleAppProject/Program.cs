@@ -22,12 +22,17 @@ namespace ConsoleAppProject
             Console.WriteLine();
             Console.WriteLine(" =================================================");
             Console.WriteLine("    BNU CO453 Applications Programming 2022-2023 ");
-            Console.WriteLine("        by Aadhi                                  ");
+            Console.WriteLine("       by Aadhi                                  ");
             Console.WriteLine(" =================================================");
             Console.WriteLine();
+            Console.Beep();
 
             DistanceConverter converter = new DistanceConverter();
-            converter.Run();
+            
+            
+            converter.ConvertDistance();
+           
+    
         }
     }
 }
