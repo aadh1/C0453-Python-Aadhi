@@ -18,9 +18,6 @@ namespace ConsoleAppProject.App01
         private double toDistance;
         private string fromUnit;
         private string toUnit;
-        private double miles;
-        private double feet;
-        private double metres;
 
         public DistanceConverter()
         {
@@ -29,24 +26,20 @@ namespace ConsoleAppProject.App01
         }
         public void ConvertDistance()
         {
+
+           OutputHeading();
+
            fromUnit = SelectUnit("Please select from distance unit >");
-           toUnit = SelectUnit ("Please select the to distance unit")
-            OutputHeading($"Converting {fromUnit} To {toUnit}");
+           toUnit = SelectUnit ("Please select the to distance unit >");
+            
+            Console.WriteLine($"Converting {fromUnit} To {toUnit}");
             
             miles = InputDistance($"Please enter number of {fromUnit} >");
             //CalculateFeet();
             OutputDistance(fromDistance, toUnit, toDistance, toUnit);
         }
 
-        private void OutputHeading(string v)
-        {
-            throw new NotImplementedException();
-        }
 
-        private string SelectUnit(string v)
-        {
-            throw new NotImplementedException();
-        }
 
         public void FeetToMiles()
         {
@@ -85,7 +78,42 @@ namespace ConsoleAppProject.App01
             Console.WriteLine($"{fromDistance} {fromUnit}" +
             $"is {toDistance} {toUnit}");
         }
-       
+        private string SelectUnit(string prompt)
+        {
+            string choice = DisplayChoices(prompt);
+            return ExecuteChoice(choice);
+
+        }
+
+        private static string ExecuteChoice(string choice)
+        {
+            if (choice.Equals("1"))
+            {
+                return FEET;
+            }
+            else if (choice.Equals("2"))
+            {
+                return METRES;
+            }
+            else if (choice.Equals("3"))
+            {
+                return MILES;
+            }
+            return null;
+        }
+
+        private static string DisplayChoices(string prompt)
+        {
+            Console.WriteLine();
+            Console.WriteLine($" 1. {FEET}");
+            Console.WriteLine($" 2. {METRES}");
+            Console.WriteLine($" 3. {MILES}");
+            Console.WriteLine();
+
+            Console.Write(prompt);
+            string choice = Console.ReadLine();
+            return choice;
+        }
 
     }
     private void OutputHeading(String prompt)
