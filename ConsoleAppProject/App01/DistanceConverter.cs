@@ -1,5 +1,7 @@
 ﻿using System;
 
+public static class Program
+{}
 namespace ConsoleAppProject.App01
 {
     
@@ -8,7 +10,7 @@ namespace ConsoleAppProject.App01
    public class DistanceConverter
 
     {
-        public const int MILES_TO_FEET = 52800;
+        public const int FEET_IN_MILES = 5280;
         public const double  METRES_TO_MILES = 1609.34;
         public const double FEET_IN_METRES = 3.28084;
         public const string FEET = "Feet";
@@ -19,43 +21,55 @@ namespace ConsoleAppProject.App01
         private string fromUnit;
         private string toUnit;
 
-        public DistanceConverter()
-        {
-            fromUnit = MILES;
-            toUnit = FEET;
-        }
+    
         public void ConvertDistance()
         {
 
-           OutputHeading();
+            Console.WriteLine(" =================================================");
+            Console.WriteLine("    Distance converter application ");
+            Console.WriteLine("       by Aadhi                                  ");
+            Console.WriteLine(" =================================================");
 
            fromUnit = SelectUnit("Please select from distance unit >");
            toUnit = SelectUnit ("Please select the to distance unit >");
             
             Console.WriteLine($"Converting {fromUnit} To {toUnit}");
             
-            miles = InputDistance($"Please enter number of {fromUnit} >");
-            //CalculateFeet();
+            fromDistance = InputDistance($"Please enter number of {fromUnit} >");
+            CalculateDistance(); 
             OutputDistance(fromDistance, toUnit, toDistance, toUnit);
+            
         }
 
-
-
-        public void FeetToMiles()
+        private void CalculateDistance()
         {
-            OutputHeading("Converting Feet to Miles");
-            
-            feet = InputDistance("Please enter number of feet >");
-            CalculateMiles();
-            OutputDistance(feet, nameof(feet), miles, nameof(miles));
-        }
-        public void MilesToMetres()
-        {
-            OutputHeading("Converting Miles to Metres");
-            
-            miles = InputDistance("Please enter number of miles >");
-            CalculateMetres();
-            OutputDistance(miles, nameof(miles), metres, nameof(metres));
+            if(fromUnit == MILES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit == FEET && toUnit == MILES)
+            {
+                toDistance = fromDistance / FEET_IN_MILES;
+            }
+
+              if(fromUnit == METRES && toUnit == FEET)
+            {
+                toDistance = fromDistance * FEET_IN_METRES;
+            }
+            else if (fromUnit == FEET && toUnit == METRES)
+            {
+                toDistance = fromDistance / FEET_IN_METRES;
+            }
+
+              if(fromUnit == METRES && toUnit == MILES)
+            {
+                toDistance = fromDistance / METRES_TO_MILES;
+            }
+            else if (fromUnit == MILES && toUnit == METRES)
+            {
+                toDistance = fromDistance * METRES_TO_MILES;
+            }
+
         }
 
         private void OutputDistance(double miles, string v1, object metres, string v2)
@@ -116,15 +130,5 @@ namespace ConsoleAppProject.App01
         }
 
     }
-    private void OutputHeading(String prompt)
-    {
-         Console.WriteLine();
-            Console.WriteLine(" =================================================");
-            Console.WriteLine("    Distance converter application ");
-            Console.WriteLine("       by Aadhi                                  ");
-            Console.WriteLine(" =================================================");
-           
-            Console.WriteLine(prompt);
-            Console.WriteLine();
-    }   
+    
 }
