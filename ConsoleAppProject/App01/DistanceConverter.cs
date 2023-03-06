@@ -1,7 +1,5 @@
 ﻿using System;
 
-public static class Program
-{}
 namespace ConsoleAppProject.App01
 {
     
