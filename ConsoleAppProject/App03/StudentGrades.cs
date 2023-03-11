@@ -61,12 +61,40 @@ namespace ConsoleAppProject.App03
         }
         else return Grades.D;
     }
+    public void CalculateMean()
+    {
+        // Arrange 
+
+        int [] statsMarks = new int []
+        {
+            10, 20, 30, 40, 50, 60, 70, 80, 90, 100
+        };
+
+        StudentGrades.Marks = statsMarks;
+
+        double expectedMean = 55.0;
+
+        // Act
+
+        StudentGrades.CalculateStats();
+
+        // Assert
+
+        
+        Assert.AreEqual(expectedMean, studentGrades.Mean);
+    }
     public void CalculateStats()
     {
+        Minimum = Marks[0];
+        Maximum = Marks[0];
+
         double total = 0;
+
         foreach(int mark in Marks)
         {
-            total = total + mark
+            if (mark > Maximum) Maximum = mark;
+            if (mark < Minimum) Minimum = mark;
+            total += mark;
         }
 
         Mean = total / Marks.Length;
