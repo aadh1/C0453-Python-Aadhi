@@ -60,24 +60,21 @@ namespace ConsoleAppProject.App03
             DisplayMenu();
 
         }
-
-        OutPutMenuChoices();
-
-        }
         
     
     }
+
     public void DisplayMenu()
     {
-        Console.WriteLine("1. Input Marks");
-        Console.WriteLine("2. Ouput Grades");
-        Console.WriteLine("3. Output Statistics");
-        Console.WriteLine("4. Output Grade Profile");
-        string choice;
+     Console.WriteLine("1. Input Marks");
+     Console.WriteLine("2. Ouput Grades");
+     Console.WriteLine("3. Output Statistics");
+     Console.WriteLine("4. Output Grade Profile");
+     string choice;
 
-        Console.WriteLine("\t");
-        Console.WriteLine("Answer :");
-        choice - Console.ReadLine();
+     Console.WriteLine("\t");
+     Console.WriteLine("Answer :");
+     choice - Console.ReadLine();
         
         if (choice == "1")
         {
@@ -103,7 +100,6 @@ namespace ConsoleAppProject.App03
         {
             Environment.Exit(0);
         }
-
     }
 
     public void InputMarks()
@@ -178,7 +174,7 @@ namespace ConsoleAppProject.App03
         Console.WriteLine($" Mean Mark is {Mean}");
 
     }
-    
+
     public void CalculateGradeProfile()
     {
         F = F / Students.Length;
