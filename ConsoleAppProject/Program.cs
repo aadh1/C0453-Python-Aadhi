@@ -5,6 +5,7 @@ using ConsoleAppProject.Helpers;
 using System;
 
 namespace ConsoleAppProject
+
 {
     /// <summary>
     /// The main method in this class is called first
