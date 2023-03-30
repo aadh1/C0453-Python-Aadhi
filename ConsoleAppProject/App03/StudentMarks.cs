@@ -4,9 +4,10 @@ namespace StudentMarks
 {
     class Program
     {
+       
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Student Grade Calculator!");
+            Console.WriteLine("Welcome to the Student Grade Calculator");
             Console.WriteLine("Aadhi - 22136681 - Student Grade Calculator");
 
             string[] names = new string[10];
@@ -113,7 +114,6 @@ namespace StudentMarks
                 else if (choice == 3)
                 {
                     // Display class average
-                    int totalMarks = 0;
                     for (int i = 0; i < 10; i++)
                     {
                     }
