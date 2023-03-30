@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ConsoleAppProject.App04
 {
@@ -9,14 +8,11 @@ namespace ConsoleAppProject.App04
     /// text message. Other data, such as author and time, are also stored.
     /// </summary>
     /// <author>
-    /// Michael Kölling and David J. Barnes
+    /// Aadhi Ravichandran 22136681
     /// version 0.1
     /// </author>
     public class MessagePost : Post
     {
-        private int likes;
-
-        private readonly List<String> comments;
 
 
 
