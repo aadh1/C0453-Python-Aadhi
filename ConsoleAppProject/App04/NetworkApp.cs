@@ -54,8 +54,7 @@ namespace ConsoleAppProject.App04
 
         private void DisplayAll()
         {
-    object news = null;
-    news.Display();
+           news.Display();
         }
 
         private void PostImage();
