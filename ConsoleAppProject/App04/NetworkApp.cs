@@ -1,3 +1,5 @@
+using ConsoleAppProject.Helpers;
+
 namespace ConsoleAppProject.App04
 {
 
@@ -7,7 +9,7 @@ namespace ConsoleAppProject.App04
 
     
         /// DisplayMenu///
-        public void DisplayMenu()
+        public void DisplayMenu();
 
         ConsoleHelper.OutputHeading (" Aadhi's News Feed");
 
