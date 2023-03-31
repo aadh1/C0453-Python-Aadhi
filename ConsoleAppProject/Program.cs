@@ -17,17 +17,18 @@ namespace ConsoleAppProject
     /// </summary>
     public static class Program
     {
+        private static DistanceConverter converter = new DistanceConverter();
+        private static StudentGrades grades = new StudentGrades();
         public static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            Console.WriteLine();
-            Console.WriteLine(" =================================================");
-            Console.WriteLine("    BNU CO453 Applications Programming 2022-2023 ");
-            Console.WriteLine("       by Aadhi                                  ");
-            Console.WriteLine(" =================================================");
-            Console.WriteLine();
-            Console.Beep();
+            ConsoleHelper.OutputHeading( "Welcome to Aadhi's CO453");
+
+            string[] choices = {"Distance Converter", "BMI Calculator",
+            "Student Marks", " Social Network"};
+
+            int choiceNo = ConsoleHelper.SelectChoice(choices);
 
             DistanceConverter converter = new DistanceConverter();
             
